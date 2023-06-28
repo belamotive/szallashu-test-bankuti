@@ -20,3 +20,12 @@ mix.js("resources/js/app.js", "public/js").postCss(
 );
 
 mix.sass("resources/sass/app.scss", "public/css");
+
+if (mix.inProduction()) {
+    mix.version(); // Enable versioning for cache-busting in production
+} else {
+    mix.browserSync("localhost:8000"); // Enable BrowserSync for live reloading
+    mix.webpackConfig({
+        devtool: "inline-source-map", // Enable source maps for easier debugging in development
+    });
+}
