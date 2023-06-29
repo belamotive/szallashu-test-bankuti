@@ -17,7 +17,7 @@
                 <button
                     id="button-model-trigger"
                     type="button"
-                    class="btn btn-primary"
+                    class="button"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                     onclick="showModal()"
@@ -28,7 +28,7 @@
 
             <!-- Modal -->
             <div
-                class="modal fade modal--hidden"
+                class="modal modal-lg fade modal--hidden"
                 id="exampleModal"
                 tabindex="-1"
                 aria-labelledby="exampleModalLabel"
@@ -47,17 +47,54 @@
                                 aria-label="Close"
                             ></button>
                         </div>
-                        <div class="modal-body">...</div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-8 mb-4">
+                                    <div class="feedback">
+                                        <i
+                                            class="feedback__icon fa-regular fa-circle-check"
+                                        ></i>
+                                        <p class="feedback__paragraph">
+                                            Lorem ipsum, dolor sit amet
+                                        </p>
+                                    </div>
+                                    <div class="feedback">
+                                        <i
+                                            class="feedback__icon fa-regular fa-circle-check"
+                                        ></i>
+                                        <p class="feedback__paragraph">
+                                            Lorem ipsum, dolor sit amet
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="modal__cover-image">IMG</div>
+                                </div>
+                            </div>
+                            <div
+                                class="form-check form-switch d-flex align-items-center my-4"
+                            >
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    role="switch"
+                                    id="flexSwitchCheckDefault"
+                                    aria-checked="false"
+                                />
+                                <label
+                                    class="form-check-label ml-1"
+                                    for="flexSwitchCheckDefault"
+                                    >Show specific results only</label
+                                >
+                            </div>
+                        </div>
                         <div class="modal-footer">
                             <button
                                 type="button"
-                                class="btn btn-secondary"
+                                class="button"
                                 data-bs-dismiss="modal"
                             >
                                 Close
-                            </button>
-                            <button type="button" class="btn btn-primary">
-                                Save changes
                             </button>
                         </div>
                     </div>
