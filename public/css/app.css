@@ -19783,16 +19783,24 @@ textarea.form-control-lg {
   text-align: center;
   vertical-align: middle;
 }
+.button--wide {
+  width: 100%;
+}
+.button--w-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+.button--w-icon .icon {
+  font-size: 0.85rem;
+  color: #333333;
+}
 .button:hover {
   background: linear-gradient(to bottom, #f90 0%, #f60 100%);
   border: 1px solid #db6345;
   text-shadow: 0px -1px 0px #f60;
   color: #fff;
-}
-
-.feedback__icon {
-  color: #999999;
-  font-size: 1.5rem;
 }
 
 .feedback {
@@ -19806,7 +19814,12 @@ textarea.form-control-lg {
   margin: 0;
 }
 
-.modal__cover-image {
+.icon {
+  color: #999999;
+  font-size: 1.5rem;
+}
+
+.image {
   background-color: #e6e7e9;
   display: flex;
   align-items: center;
@@ -19814,12 +19827,69 @@ textarea.form-control-lg {
   color: #333333;
   height: 10rem;
   width: 100%;
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 .form-check-input {
   width: 3.5rem !important;
   height: 2rem !important;
   margin-right: 0.75rem !important;
+}
+
+/* list items */
+/* styles.css */
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+.list__item {
+  margin-bottom: 1rem;
+}
+.list__cover-image {
+  height: 14rem;
+  font-size: 1.5rem;
+}
+.list__title {
+  color: rgb(52, 152, 219);
+  font-size: 1.2rem;
+  margin-top: 0.55rem;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+.list__title {
+  cursor: pointer;
+}
+
+.list__info {
+  display: none;
+  position: relative;
+}
+
+.list__arrow {
+  display: block;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  transform: rotate(45deg);
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+}
+
+.list__window {
+  display: block;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  z-index: 9999;
+}
+
+.list__info--visible {
+  display: block;
 }
 

@@ -1,3 +1,17 @@
+@php
+    $items = [
+        // Define your items data here
+        // Example:
+        ['title' => 'Item 1', 'description' => 'Description 1'],
+        ['title' => 'Item 2', 'description' => 'Description 2'],
+        ['title' => 'Item 3', 'description' => 'Description 3'],
+        ['title' => 'Item 4', 'description' => 'Description 4'],
+        ['title' => 'Item 5', 'description' => 'Description 5'],
+        ['title' => 'Item 6', 'description' => 'Description 6'],
+        // Add more items as needed
+    ];
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,7 +34,6 @@
                     class="button"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
-                    onclick="showModal()"
                 >
                     Launch modal
                 </button>
@@ -49,30 +62,22 @@
                         </div>
                         <div class="modal-body">
                             <div class="row">
-                                <div class="col-md-12 col-lg-8 mb-4">
+                                <div class="col-sm-8 mb-3">
                                     <div class="feedback">
-                                        <i
-                                            class="feedback__icon fa-regular fa-circle-check"
-                                        ></i>
-                                        <p class="feedback__paragraph">
-                                            Lorem ipsum, dolor sit amet
-                                        </p>
+                                        <i class="icon fa-regular fa-circle-check"></i>
+                                        <p class="feedback__paragraph">Lorem ipsum dolor sit amet</p>
                                     </div>
                                     <div class="feedback">
-                                        <i
-                                            class="feedback__icon fa-regular fa-circle-check"
-                                        ></i>
-                                        <p class="feedback__paragraph">
-                                            Lorem ipsum, dolor sit amet
-                                        </p>
+                                        <i class="icon fa-regular fa-circle-check"></i>
+                                        <p class="feedback__paragraph">Lorem ipsum dolor sit amet</p>
                                     </div>
                                 </div>
-                                <div class="col-md-12 col-lg-4">
-                                    <div class="modal__cover-image">IMG</div>
+                                <div class="col-sm-4">
+                                    <div class="image">IMG</div>
                                 </div>
                             </div>
                             <div
-                                class="form-check form-switch d-flex align-items-center my-4"
+                                class="form-check form-switch d-flex justify-content-center align-items-center my-4"
                             >
                                 <input
                                     class="form-check-input"
@@ -87,6 +92,7 @@
                                     >Show specific results only</label
                                 >
                             </div>
+                            @include('list', ['items' => $items])
                         </div>
                         <div class="modal-footer">
                             <button
