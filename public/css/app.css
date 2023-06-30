@@ -19825,7 +19825,7 @@ textarea.form-control-lg {
   align-items: center;
   justify-content: center;
   color: #333333;
-  height: 10rem;
+  height: 9rem;
   width: 100%;
   font-size: 1.75rem;
 }
@@ -19848,6 +19848,11 @@ textarea.form-control-lg {
 .list__cover-image {
   height: 14rem;
   font-size: 1.5rem;
+}
+@media (min-width: 576px) {
+  .list__cover-image {
+    height: 20rem;
+  }
 }
 .list__title {
   color: rgb(52, 152, 219);
