@@ -1,15 +1,14 @@
 @php
-    $items = [
-        // Define your items data here
-        // Example:
-        ['title' => 'Item 1', 'description' => 'Description 1'],
-        ['title' => 'Item 2', 'description' => 'Description 2'],
-        ['title' => 'Item 3', 'description' => 'Description 3'],
-        ['title' => 'Item 4', 'description' => 'Description 4'],
-        ['title' => 'Item 5', 'description' => 'Description 5'],
-        ['title' => 'Item 6', 'description' => 'Description 6'],
-        // Add more items as needed
+    $titles = [
+        "Title 1",
+        "Title 2",
+        "Title 3"
     ];
+
+    $itemsToShow = 6; // Number of items to show initially
+    $itemsPerLoad = 3; // Number of additional items to load on each "More results" click
+
+    $totalItemCount = count($titles);
 @endphp
 
 <!DOCTYPE html>
@@ -64,12 +63,20 @@
                             <div class="row">
                                 <div class="col-sm-8 mb-3">
                                     <div class="feedback">
-                                        <i class="icon fa-regular fa-circle-check"></i>
-                                        <p class="feedback__paragraph">Lorem ipsum dolor sit amet</p>
+                                        <i
+                                            class="icon fa-regular fa-circle-check"
+                                        ></i>
+                                        <p class="feedback__paragraph">
+                                            Lorem ipsum dolor sit amet
+                                        </p>
                                     </div>
                                     <div class="feedback">
-                                        <i class="icon fa-regular fa-circle-check"></i>
-                                        <p class="feedback__paragraph">Lorem ipsum dolor sit amet</p>
+                                        <i
+                                            class="icon fa-regular fa-circle-check"
+                                        ></i>
+                                        <p class="feedback__paragraph">
+                                            Lorem ipsum dolor sit amet
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
@@ -92,7 +99,17 @@
                                     >Show specific results only</label
                                 >
                             </div>
-                            @include('list', ['items' => $items])
+                            <ul class="list">
+                                @include('list', ['titles' => $titles])
+                                <button
+                                    id="more-results"
+                                    class="button button--wide button--w-icon"
+                                >
+                                    More results<i
+                                        class="icon icon--small fa-solid fa-caret-down ml-1"
+                                    ></i>
+                                </button>
+                            </ul>
                         </div>
                         <div class="modal-footer">
                             <button
@@ -110,3 +127,32 @@
         <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
+
+<script>
+    document.getElementById("more-results").addEventListener("click", function() {
+        // Fetch additional items using AJAX
+        fetch('/api/more-results?limit=' + <?= $itemsPerLoad; ?> + '&offset=' + <?= $itemsToShow; ?>)
+            .then(response => response.json())
+            .then(data => {
+                // Append the new items to the list
+                const list = document.querySelector('.list');
+                data.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.className = 'list__item';
+                    listItem.innerHTML = `
+                        <div class="image list__cover-image">IMG</div>
+                        <h3 class="list__title">${item}</h3>
+                    `;
+                    list.appendChild(listItem);
+                });
+
+                // Update the number of items to show for the next "Load More" click
+                <?= $itemsToShow += $itemsPerLoad; ?>
+
+                // Hide the "Load More" button if all items are shown
+                if (<?= $itemsToShow; ?> >= <?= $totalItemCount; ?>) {
+                    document.getElementById("more-results").style.display = "none";
+                }
+            });
+    });
+</script>
