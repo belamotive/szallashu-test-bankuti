@@ -57,7 +57,7 @@
                         </div>
                         <ul class="list row row-cols-sm-3">
                             @foreach ($titles as $title)
-                                @include('listItem', ['title' => $title])
+                                <x-list-item :title="$title"/>
                             @endforeach
                         </ul>
                         <button id="more-results" class="button button--wide button--w-icon">
