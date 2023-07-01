@@ -37,6 +37,30 @@
     text-shadow: 0px -1px 0px #f60;
     color: #fff;
   }
+
+  &-link {
+    padding: 0;
+    border-radius: 0;
+    background-color: inherit;
+    font-size: 1rem;
+    color: #999999;
+    border: none;
+
+    .button-link__text {
+      text-decoration: underline;
+    }
+    
+    .icon {
+      color: #999999;
+    }
+
+    &:hover {
+      background: inherit;
+      border: none;
+      text-shadow: none;
+      color: #7a7a7a;
+    }
+  }
 }
 
 .feedback {
@@ -54,6 +78,7 @@
 .icon {
   color: #999999;
   font-size: 1.5rem;
+  text-decoration: none;
 }
 
 .image {
@@ -140,3 +165,6 @@
   display: block;
 }
 
+.modal .modal-footer--custom {
+  background-color: rgb(245	245	245);
+}

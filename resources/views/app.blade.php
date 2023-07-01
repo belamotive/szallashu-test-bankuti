@@ -28,14 +28,8 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-sm-8 mb-3">
-                                <div class="feedback">
-                                    <i class="icon fa-regular fa-circle-check"></i>
-                                    <p class="feedback__paragraph">Lorem ipsum dolor sit amet</p>
-                                </div>
-                                <div class="feedback">
-                                    <i class="icon fa-regular fa-circle-check"></i>
-                                    <p class="feedback__paragraph">Lorem ipsum dolor sit amet</p>
-                                </div>
+                                <x-feedback iconClass="fa-regular fa-circle-check" message="Lorem ipsum dolor sit amet"></x-feedback>
+                                <x-feedback iconClass="fa-regular fa-circle-check" message="Lorem ipsum dolor sit amet"></x-feedback>
                             </div>
                             <div class="col-sm-4">
                                 <div class="image">IMG</div>
@@ -46,9 +40,18 @@
                             <label class="form-check-label ml-1" for="flexSwitchCheckDefault">Show specific results only</label>
                         </div>
                         <livewire:list-component />
+                        <div class="d-flex justify-content-lg-center mt-4">
+                            <x-feedback iconClass="fa-regular fa-circle-check" message="Lorem ipsum dolor sit amet consectetur adipisicing elit."></x-feedback>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="button" data-bs-dismiss="modal">Close</button>
+                    </div>
+                    <div class="modal-footer modal-footer--custom justify-content-start">
+                        <button class="button button--w-icon button-link">
+                            <span class="button-link__text">Details</span>
+                            <i class="icon icon--small fa-solid fa-caret-down ml-1"></i>
+                        </button>
                     </div>
                 </div>
             </div>

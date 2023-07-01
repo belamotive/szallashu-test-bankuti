@@ -19802,6 +19802,26 @@ textarea.form-control-lg {
   text-shadow: 0px -1px 0px #f60;
   color: #fff;
 }
+.button-link {
+  padding: 0;
+  border-radius: 0;
+  background-color: inherit;
+  font-size: 1rem;
+  color: #999999;
+  border: none;
+}
+.button-link .button-link__text {
+  text-decoration: underline;
+}
+.button-link .icon {
+  color: #999999;
+}
+.button-link:hover {
+  background: inherit;
+  border: none;
+  text-shadow: none;
+  color: #7a7a7a;
+}
 
 .feedback {
   display: flex;
@@ -19817,6 +19837,7 @@ textarea.form-control-lg {
 .icon {
   color: #999999;
   font-size: 1.5rem;
+  text-decoration: none;
 }
 
 .image {
@@ -19896,5 +19917,9 @@ textarea.form-control-lg {
 
 .list__info--visible {
   display: block;
+}
+
+.modal .modal-footer--custom {
+  background-color: rgb(245, 245, 245);
 }
 
