@@ -1,13 +1,3 @@
-@php
-    $titles = [
-        "Title 1",
-        "Title 2",
-        "Title 3"
-    ];
-
-    $itemsPerLoad = 3; // Number of additional items to load on each "More results" click
-@endphp
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,15 +45,7 @@
                             <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" aria-checked="false">
                             <label class="form-check-label ml-1" for="flexSwitchCheckDefault">Show specific results only</label>
                         </div>
-                        <ul class="list row row-cols-sm-3">
-                            @foreach ($titles as $title)
-                                <x-list-item :title="$title"/>
-                            @endforeach
-                        </ul>
-                        <button id="more-results" class="button button--wide button--w-icon">
-                            More results
-                            <i class="icon icon--small fa-solid fa-caret-down ml-1"></i>
-                        </button>
+                        <livewire:list-component />
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="button" data-bs-dismiss="modal">Close</button>
@@ -73,5 +55,6 @@
         </div>
     </main>
     <script src="{{ asset('js/app.js') }}"></script>
+    @livewireScripts
 </body>
 </html>

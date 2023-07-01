@@ -8,7 +8,7 @@ const itemsPerLoad = 3;
 
 console.log("list:", list);
 
-moreResultsButton.addEventListener("click", function () {
+/* moreResultsButton.addEventListener("click", function () {
     // Fetch additional items using AJAX
     fetch(
         "/api/more-results?limit=" + itemsPerLoad + "&offset=" + moreRequested
@@ -37,4 +37,4 @@ moreResultsButton.addEventListener("click", function () {
                 moreResultsButton.style.display = "none";
             }
         });
-});
+}); */
