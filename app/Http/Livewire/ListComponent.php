@@ -25,6 +25,17 @@ class ListComponent extends Component
         $this->itemsToShow += $this->itemsPerLoad;
     }
 
+    public $activeItem = null;
+
+    public function toggleDetails($index)
+    {
+        if ($this->activeItem === $index) {
+            $this->activeItem = null;
+        } else {
+            $this->activeItem = $index;
+        }
+    }
+
     public function render()
     {
         $slicedTitles = array_slice($this->titles, 0, $this->itemsToShow);

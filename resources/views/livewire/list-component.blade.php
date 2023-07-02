@@ -1,7 +1,13 @@
 <div>
     <ul class="list row row-cols-sm-3">
-        @foreach ($slicedTitles as $title)
-            <x-list-item :title="$title" />
+        @foreach ($slicedTitles as $index => $title)
+            <x-list-item :title="$title" :index="$index" />
+            @if ($activeItem === $index)
+                <x-details-box />
+            @endif
+            @if ($loop->iteration % 3 === 0 && !$loop->last)
+                <x-details-box />
+            @endif
         @endforeach
     </ul>
 
