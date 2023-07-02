@@ -3,7 +3,7 @@
     <div class="image details-box__image">IMG</div>
   </div>
   <div class="col-lg-8 details-box__text-col">
-    <h3 class="list__title deails-box__title">Item title</h3>
+    <h3 class="list__title deails-box__title">{{ $title }}</h3>
     <div class="rating-box">
       <span class="badge text-bg-success rating-box__rating-score">9.6</span>
       <div class="rating-box__rating-counter">115 ratings</div>

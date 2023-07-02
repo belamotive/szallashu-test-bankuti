@@ -3,11 +3,17 @@
         @foreach ($slicedTitles as $index => $title)
             <x-list-item :title="$title" :index="$index" />
             @if ($activeItem === $index)
-                <x-details-box />
+            <div class="mobile-details-container">
+                Details container for mobile
+                <x-details-box :title="$activeTitle"/>
+            </div>
             @endif
-            @if ($loop->iteration % 3 === 0 && !$loop->last)
-                <x-details-box />
-            @endif
+            @if ($activeItem !== null && ($index + 1) % 3 === 0)
+            <div class="desktop-details-container w-100">
+                Details container for desktop
+                <x-details-box :title="$activeTitle"/>
+            </div>
+        @endif
         @endforeach
     </ul>
 

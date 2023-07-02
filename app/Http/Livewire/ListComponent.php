@@ -12,9 +12,7 @@ class ListComponent extends Component
         "Title 3",
         "Title 4",
         "Title 5",
-        "Title 6",
-        "Title 7",
-        "Title 8"
+        "Title 6"
     ];
 
     public $itemsToShow = 3; // Number of items to show initially
@@ -31,8 +29,10 @@ class ListComponent extends Component
     {
         if ($this->activeItem === $index) {
             $this->activeItem = null;
+            $this->activeTitle = null;
         } else {
             $this->activeItem = $index;
+            $this->activeTitle = $this->titles[$index];
         }
     }
 

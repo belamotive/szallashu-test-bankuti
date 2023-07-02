@@ -169,20 +169,22 @@
   background-color: rgb(245	245	245);
 }
 
-.info-window-desktop {
+.desktop-details-container {
   display: none;
+  padding: 0 !important;
 }
 
-.info-window-mobile {
+.mobile-details-container{
   display: block;
+  padding: 0 !important;
 }
 
 @media (min-width: 576px) {
-  .info-window-desktop {
+  .desktop-details-container {
     display: block;
   }
 
-  .info-window-mobile {
+  .mobile-details-container{
     display: none;
   }
 }
@@ -190,7 +192,9 @@
 .details-box {
   position: relative;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
   padding-top: 2rem;
+  
 
   &::before {
     position: absolute;
