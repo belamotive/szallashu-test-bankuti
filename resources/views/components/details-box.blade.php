@@ -1,4 +1,15 @@
-<div class="details-box my-3 py-3">
+@php
+    $containerClass = '';
+
+    // Set the container class based on the index
+    if ($index === 0) {
+        $containerClass = 'details-box--arrow-left';
+    } elseif ($index === 2) {
+        $containerClass = 'details-box--arrow-right';
+    }
+@endphp
+
+<div class="details-box row {{ $containerClass }} my-3 py-3">
   <div class="col-lg-4 details-box__image-col">
     <div class="image details-box__image">IMG</div>
   </div>
@@ -18,5 +29,5 @@
       <div class="more-info__button">more details &#187;</div>
     </div>
   </div>
-  <div class="icon details-box__close-button"><i class="fa-solid fa-xmark"></i></div>
+  <div wire:click="toggleDetails({{$index}})" class="icon details-box__close-button"><i class="fa-solid fa-xmark"></i></div>
 </div>

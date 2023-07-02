@@ -20,28 +20,29 @@ class ListComponent extends Component
 
     public function loadMore()
     {
-        $this->itemsToShow += $this->itemsPerLoad;
+        $this->itemsToShow += $this->itemsPerLoad; // Increase the number of items to show
     }
 
-    public $activeItem = null;
+    public $activeItem = null; // Currently active item index
+    public $activeTitle = null; // Currently active item title
 
     public function toggleDetails($index)
     {
         if ($this->activeItem === $index) {
-            $this->activeItem = null;
+            $this->activeItem = null; // Deactivate the current item
             $this->activeTitle = null;
         } else {
-            $this->activeItem = $index;
-            $this->activeTitle = $this->titles[$index];
+            $this->activeItem = $index; // Set the clicked item as active
+            $this->activeTitle = $this->titles[$index]; // Pass active item title to component
         }
     }
 
     public function render()
     {
-        $slicedTitles = array_slice($this->titles, 0, $this->itemsToShow);
+        $slicedTitles = array_slice($this->titles, 0, $this->itemsToShow); // Slice the titles array based on the number of items to show
 
         return view('livewire.list-component', [
-            'slicedTitles' => $slicedTitles,
+            'slicedTitles' => $slicedTitles
         ]);
     }
 }
